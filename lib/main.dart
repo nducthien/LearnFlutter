@@ -3,40 +3,29 @@ import 'calculation.dart';
 import 'car.dart';
 
 void main() {
-  // for (int i = 0; i < numbers.length; i++) {
-  //   print(numbers[i]);
-  // }
+  List<Car> cars = <Car>[]; // a blank list
+  cars.add(Car(name: 'Lexus LX570', yearOfProduction: 2018));
+  cars.add(Car(name: 'Lexus LX570 Supper Sport', yearOfProduction: 2021));
+  cars.add(Car(name: 'Mercedes-Mayback S-class saloon', yearOfProduction: 2020));
+  cars.add(Car(name: 'Mercedes S-class saloon', yearOfProduction: 2019));
 
-  // numbers.forEach((countNumber) {
-  //   print(countNumber);
+  // how to sort this list by year
+  // cars.sort((ca1, ca2) {
+  //   return ca1.yearOfProduction - ca2.yearOfProduction;
   // });
 
-  stringNumber.forEach((element) {
-    print(element);
+  // cars.sort((ca1, ca2) {
+  //   return ca2.yearOfProduction - ca1.yearOfProduction;
+  // });
+
+  // how to sort by name
+  cars.sort((ca1, ca2) {
+    return ca1.name.compareTo(ca2.name);
   });
 
-  stringNumbers.forEach((elements) {
-    print(elements);
-  });
-
-  Car newCar = new Car(
-      name: 'Lexus LX570 Super Sport',
-      yearOfProduction: 2020); // init follow java
-  newCar.doSomething();
-  newCar.sayHello(personName: 'Mr.T');
-  newCar.handleEvent = (){
-    print("Handle in main");
-  };
-
-  var myCar = Car(
-      name: 'Mercedes-Maybach S-Class Saloon',
-      yearOfProduction: 2020); // init follow dart
-  myCar.doSomething();
-  myCar.sayHello(personName: 'Mr.D');
-
-  // show value using ${myCar.name}, ${myCar.yearOfProduction} if not override toString
+  //
   runApp(Center(
-      child: Text('${newCar.toString()}',
+      child: Text(cars.toString(),
           style: TextStyle(fontSize: 20),
           textDirection: TextDirection.ltr // left to right - ctrl + shift + \
           )));
