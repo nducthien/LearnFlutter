@@ -10,3 +10,6 @@ List<String> stringNumber = numbers.map((e) => 'value = $e').toList();
 List<String> stringNumbers = numbers.map((e) {
   return "need_value = $e";
 }).toList();
+
+// '' kết hợp $ show is string , sâu ký tự
+// add _ define is private
