@@ -1,42 +1,37 @@
 import 'package:flutter/material.dart';
-import 'calculation.dart';
-import 'models/car.dart';
 
 void main() {
-  List<Car> cars = <Car>[]; // a blank list
-  cars.add(Car(name: 'Lexus LX570', yearOfProduction: 2018));
-  cars.add(Car(name: 'Lexus LX570 Supper Sport', yearOfProduction: 2021));
-  cars.add(Car(name: 'Mercedes-Maybach GLS 600 4MATIC', yearOfProduction: 2020));
-  cars.add(Car(name: 'Mercedes S-class saloon', yearOfProduction: 2019));
-  cars.add(Car(name: 'Mercedes S-650', yearOfProduction: 2020));
+  runApp(MyApp(
+    name: 'Nam',
+    age: 25,
+  ) // how to send arguments/ param to this widget ?
+      );
+}
 
-  // todo - how to sort this list by year
-  // cars.sort((ca1, ca2) {
-  //   return ca1.yearOfProduction - ca2.yearOfProduction;
-  // });
+// define widget
+// ignore: must_be_immutable
+class MyApp extends StatelessWidget {
+  // state is property in tag
+  // state change -> function build() run again -) ui load again
 
-  // cars.sort((ca1, ca2) {
-  //   return ca2.yearOfProduction - ca1.yearOfProduction;
-  // });
+  @override
+  // let's define a constructor here
+  String name;
+  int age;
 
-  // todo how to sort by name
-  // cars.sort((ca1, ca2) {
-  //   return ca1.name.compareTo(ca2.name);
-  // });
+  MyApp({this.name, this.age});
 
-  // todo - how to update an item in the list ?
-  //cars[0].yearOfProduction = 2015;
-  
-  // todo -  how to filter ? ex: get only cars in 2020
-  var filterCar = cars.where((car) => car.yearOfProduction == 2020 && car.name.contains("Mercedes")).toList();
-
-  // todo delete an item = using filter
-  cars = cars.where((element) => element.name != 'Lexus LX570').toList();
-
-
-  runApp(Center(
-      child: Text(cars.toString(),
-          style: TextStyle(fontSize: 15),
-          textDirection: TextDirection.ltr // left to right
-          )));
+  // ignore: missing_return
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        title: "This is my first app",
+        home: Scaffold(
+          body: Center(
+              child: Text(
+            "name: $name, age: $age",
+            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.red),
+            textDirection: TextDirection.ltr,
+          )),
+        ));
+  }
 }
