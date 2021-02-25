@@ -4,8 +4,7 @@ void main() {
   runApp(MyApp(
     name: 'Nam',
     age: 25,
-  ) // how to send arguments/ param to this widget ?
-      );
+  )); // how to send arguments/ param to this widget ?
 }
 
 // define widget
@@ -29,7 +28,8 @@ class MyApp extends StatelessWidget {
           body: Center(
               child: Text(
             "name: $name, age: $age",
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.red),
+            style: TextStyle(
+                fontSize: 30, fontWeight: FontWeight.bold, color: Colors.red),
             textDirection: TextDirection.ltr,
           )),
         ));
